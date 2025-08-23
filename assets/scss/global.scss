@@ -246,8 +246,9 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	.menu-content{
 		overflow-x: hidden;
 		padding: 180px 10px 100px;
-		@media (min-width: 1580px){
-			padding-left: calc(50vw - 800px);
+		padding-left: calc(8.33333333% *2);
+		@media (max-width: 992px){
+			padding-left: 10px;
 		}
 	}
 	ul{
