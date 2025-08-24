@@ -15,6 +15,20 @@
     <link rel="stylesheet" href="assets/scss/global.css" />
 </head>
 <body>
+    <audio id="bg-music" autoplay loop preload="auto" playsinline>
+        <source src="assets/audio/ambiance.mp3" type="audio/mpeg">
+        Tarayıcınız ses etiketini desteklemiyor.
+    </audio>
+    <button class="voice-on-off active" onclick="toggleMusic()">
+        <svg class="play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.4086 9.35258C22.5305 10.5065 22.5305 13.4935 20.4086 14.6474L7.59662 21.6145C5.53435 22.736 3 21.2763 3 18.9671L3 5.0329C3 2.72368 5.53435 1.26402 7.59661 2.38548L20.4086 9.35258Z" stroke="#1D5847" stroke-width="1.5"/>
+        </svg>
+        <svg class="stop" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1D5847" stroke-width="1.5"/>
+            <path d="M8 9.5C8 9.03406 8 8.80109 8.07612 8.61732C8.17761 8.37229 8.37229 8.17761 8.61732 8.07612C8.80109 8 9.03406 8 9.5 8C9.96594 8 10.1989 8 10.3827 8.07612C10.6277 8.17761 10.8224 8.37229 10.9239 8.61732C11 8.80109 11 9.03406 11 9.5V14.5C11 14.9659 11 15.1989 10.9239 15.3827C10.8224 15.6277 10.6277 15.8224 10.3827 15.9239C10.1989 16 9.96594 16 9.5 16C9.03406 16 8.80109 16 8.61732 15.9239C8.37229 15.8224 8.17761 15.6277 8.07612 15.3827C8 15.1989 8 14.9659 8 14.5V9.5Z" stroke="#1D5847" stroke-width="1.5"/>
+            <path d="M13 9.5C13 9.03406 13 8.80109 13.0761 8.61732C13.1776 8.37229 13.3723 8.17761 13.6173 8.07612C13.8011 8 14.0341 8 14.5 8C14.9659 8 15.1989 8 15.3827 8.07612C15.6277 8.17761 15.8224 8.37229 15.9239 8.61732C16 8.80109 16 9.03406 16 9.5V14.5C16 14.9659 16 15.1989 15.9239 15.3827C15.8224 15.6277 15.6277 15.8224 15.3827 15.9239C15.1989 16 14.9659 16 14.5 16C14.0341 16 13.8011 16 13.6173 15.9239C13.3723 15.8224 13.1776 15.6277 13.0761 15.3827C13 15.1989 13 14.9659 13 14.5V9.5Z" stroke="#1D5847" stroke-width="1.5"/>
+        </svg>
+    </button>
     <header class="header">
         <div class="container">
             <div class="row">
@@ -60,8 +74,8 @@
                 <li><a href="ayricaliklar.html">Ayricaliklar</a></li>
                 <li><a href="konum.html">Konum</a></li>
                 <li><a href="daire-planlari.html">Daire Planları</a></li>
-                <li><a href="javascript:;">Kurumsal</a></li>
-                <li><a href="javascript:;">İletişim</a></li>
+                <li><a href="kurumsal.html">Kurumsal</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
             </ul>
             <div class="seller-office">
                 <a href="tel:08508851510">Satış Ofisi <span>0850 885 15 10</span></a>
@@ -154,8 +168,8 @@
                 <a href="ayricaliklar.html" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">Ayricaliklar</a>
                 <a href="konum.html" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Konum</a>
                 <a href="daire-planlari.html" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">Daire Planları</a>
-                <a href="javascript:;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">Kurumsal</a>
-                <a href="javascript:;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">⁠İletişim</a>
+                <a href="kurumsal.html" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">Kurumsal</a>
+                <a href="iletisim.html" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">⁠İletişim</a>
             </div>
         </div>
         <div class="footer-bottom">
