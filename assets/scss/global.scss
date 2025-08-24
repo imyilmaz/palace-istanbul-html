@@ -304,6 +304,156 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	color: #fff;
 	overflow: hidden;
 }//swiper-buttons
+@keyframes logo-line-1 {
+	0%{ stroke-dasharray: 1218; stroke-dashoffset: 1218; }
+	100%{ stroke-dasharray: 1218; stroke-dashoffset: 0; }
+}
+@keyframes logo-line-2 {
+	0%{ stroke-dasharray: 1133; stroke-dashoffset: 1133; }
+	100%{ stroke-dasharray: 1133; stroke-dashoffset: 0; }
+}
+@keyframes logo-line-2-path {
+	0%{ fill: transparent; }
+	100%{ fill: #1D5847; }
+}
+@keyframes logo-line-3 {
+	0%{ stroke-dasharray: 297; stroke-dashoffset: 297; }
+	100%{ stroke-dasharray: 297; stroke-dashoffset: 0; }
+}
+@keyframes logo-flower {
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@keyframes logo-text {
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@keyframes entry-fadeOut {
+	0%{ opacity: 1; }
+	100%{ opacity: 0; }
+}
+@keyframes entry-overlay-1 {
+	0%{ transform: translateX(0); }
+	100%{ transform: translateX(-100%); }
+}
+@keyframes entry-overlay-2 {
+	0%{ transform: translateX(0); }
+	100%{ transform: translateX(100%); }
+}
+.entry{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 553;
+	pointer-events: none;
+	overflow: hidden;
+	.entry-overlay-1{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 50%;
+		z-index: 5;
+		animation: entry-overlay-1 2s 6s ease-in-out both;
+		overflow: hidden;
+		span{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 200%;
+			background: url(../images/entry.png) 50% 50% #1D5847 fixed no-repeat;
+		}
+	}
+	.entry-overlay-2{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		z-index: 5;
+		animation: entry-overlay-2 2s 6s ease-in-out both;
+		overflow: hidden;
+		span{
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 200%;
+			background: url(../images/entry.png) 50% 50% #1D5847 fixed no-repeat;
+		}
+	}
+	.logo{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 556;
+		animation: entry-fadeOut 1.5s 6.5s ease-in-out both;
+		&-part{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+		&-shadow{
+			img{ animation: logo-flower 2s ease-in-out 4s both; display: block;}
+		}
+		&-line-1{
+			svg{ animation: logo-line-1 3s ease-in-out 0s both; stroke-dasharray: 1218; stroke-dashoffset: 1218; }
+		}
+		&-line-2{
+			svg{ animation: logo-line-2 3s ease-in-out 1s both; stroke-dasharray: 1133; stroke-dashoffset: 1133; 
+				path{ animation: logo-line-2-path 1s ease-in-out 3s both; fill: transparent; }
+			}
+		}
+		&-line-3{
+			margin-top: 114px;
+			svg{ animation: logo-line-3 3s ease-in-out 2s both; stroke-dasharray: 297; stroke-dashoffset: 297; }
+		}
+		&-flower{
+			margin-top: -61px;
+			img{ animation: logo-flower 2s ease-in-out 4s both; display: block; }
+		}
+		&-palace-text{
+			margin-top: 42px;
+			.text-part-1{ animation: logo-text 1s ease-in-out 4.4s both; }
+			.text-part-2{ animation: logo-text 1s ease-in-out 4.5s both; }
+			.text-part-3{ animation: logo-text 1s ease-in-out 4.6s both; }
+			.text-part-4{ animation: logo-text 1s ease-in-out 4.7s both; }
+			.text-part-5{ animation: logo-text 1s ease-in-out 4.8s both; }
+			.text-part-6{ animation: logo-text 1s ease-in-out 4.9s both; }
+		}
+		&-istanbul-text{
+			margin-top: 88px;
+			.text-part-1{ animation: logo-text 1s ease-in-out 4.8s both; }
+			.text-part-2{ animation: logo-text 1s ease-in-out 4.9s both; }
+			.text-part-3{ animation: logo-text 1s ease-in-out 5s both; }
+			.text-part-4{ animation: logo-text 1s ease-in-out 5.1s both; }
+			.text-part-5{ animation: logo-text 1s ease-in-out 5.2s both; }
+			.text-part-6{ animation: logo-text 1s ease-in-out 5.3s both; }
+			.text-part-7{ animation: logo-text 1s ease-in-out 5.4s both; }
+			.text-part-8{ animation: logo-text 1s ease-in-out 5.5s both; }
+		}
+		&-beylerbeyi-text{
+			margin-top: 140px;
+			.text-part-1{ animation: logo-text 1s ease-in-out 5s both; }
+			.text-part-2{ animation: logo-text 1s ease-in-out 5.1s both; }
+			.text-part-3{ animation: logo-text 1s ease-in-out 5.2s both; }
+			.text-part-4{ animation: logo-text 1s ease-in-out 5.3s both; }
+			.text-part-5{ animation: logo-text 1s ease-in-out 5.4s both; }
+			.text-part-6{ animation: logo-text 1s ease-in-out 5.5s both; }
+			.text-part-7{ animation: logo-text 1s ease-in-out 5.6s both; }
+			.text-part-8{ animation: logo-text 1s ease-in-out 5.7s both; }
+			.text-part-9{ animation: logo-text 1s ease-in-out 5.8s both; }
+			.text-part-10{ animation: logo-text 1s ease-in-out 5.9s both; }
+		}
+	}
+}
 .main-slider{
 	position: relative;
 	.main-swiper{
@@ -335,12 +485,20 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 						line-height: 1;
 						color: #fff;
 						margin-bottom: 5px;
+						@media (max-width:1320px){ font-size: 100px; }
+						@media (max-width:992px){ font-size: 75px; }
+						@media (max-width:768px){ font-size: 50px;}
+						@media (max-width:480px){ font-size: 32px; }
 					}
 					p{
 						font-size: 90px;
 						line-height: 1;
 						color: #fff;
 						margin-bottom: 5px;
+						@media (max-width:1320px){ font-size: 75px; }
+						@media (max-width:992px){ font-size: 60px; }
+						@media (max-width:768px){ font-size: 40px;}
+						@media (max-width:480px){ font-size: 26px; }
 					}
 				}
 			}
