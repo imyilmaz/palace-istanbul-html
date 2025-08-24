@@ -54,6 +54,24 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
     font-style: normal;
   }
 }
+.voice-on-off{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 50;
+	background: transparent;
+	border: none;
+	svg{
+		display: block;
+		width: 32px;
+		height:32px;
+	}
+	.stop{ display: none; }
+	&.active{
+		.play{ display: none;}
+		.stop{ display: block; }
+	}
+}
 .container{
 	max-width: 1920px !important;
 	$value: 10px;
@@ -110,10 +128,11 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 		&.ham-text{
 			opacity: 1;
 		}
-		@media (max-width: 768px){
+		@media (max-width: 480px){
 			top: 100%;
 			left: 10px;
 			transform: translateX(0);
+			display: none
 		}
 	}
 	&.open{ 
@@ -193,6 +212,9 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 				top: 50%;
 				transform: translate(-50%,-50%);
 				pointer-events: none;
+			}
+			@media (max-width: 480px){
+				height: 100px;
 			}
 		}
 	}
@@ -437,6 +459,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 		transform: translate(-50%,-50%);
 		z-index: 556;
 		animation: entry-fadeOut 1s 6s ease-in-out both;
+		@media (max-width: 480px){ transform: scale(0.75); }
 		&-part{
 			position: absolute;
 			left: 50%;
@@ -722,7 +745,6 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 				@media (max-width: 1320px){ font-size: 150px; text-shadow: 4px 4px 80px rgba(0,0,0,.75); }
 				@media (max-width: 992px){ font-size: 100px; text-shadow: 4px 4px 50px rgba(0,0,0,.75); }
 				@media (max-width: 768px){ font-size: 60px; text-shadow: 4px 4px 30px rgba(0,0,0,.75); }
-				@media (max-width: 480px){ font-size: 40px; text-shadow: 4px 4px 20px rgba(0,0,0,.75); }
 			}
 		}
 	}
@@ -872,6 +894,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	position: relative;
 	.img{
 		height: 500px;
+		@media (max-width: 768px){ height: 300px; }
 		img{
 			display: block;
 			width: 100%;
@@ -893,7 +916,6 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 			@media (max-width: 1320px){ font-size: 120px; }
 			@media (max-width: 992px){ font-size: 90px; }
 			@media (max-width: 768px){ font-size: 60px; }
-			@media (max-width: 480px){ font-size: 40px; }
 		}
 	}
 }//page-banner
@@ -915,6 +937,8 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 		text-align: center;
 		padding-top: 250px;
 		padding-bottom: 440px;
+		@media (max-width:768px){ padding-bottom: 340px; }
+		@media (max-width:480px){ padding-bottom: 240px; }
 		h1{
 			font-size: 100px;
 			line-height: 1;
@@ -924,8 +948,6 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 			margin: 0 auto 40px;
 			@media (max-width:1320px){ font-size: 80px; }
 			@media (max-width:992px){ font-size: 60px; }
-			@media (max-width:768px){ font-size: 40px; }
-			@media (max-width:480px){ font-size: 28px; }
 		}
 		p{
 			width: 940px;
@@ -945,6 +967,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	.text{
 		padding: 160px 0 80px;
 		text-align: center;
+		@media (max-width: 992px){ padding: 80px 0 60px; }
 		h2{
 			font-size: 100px;
 			line-height: 1;
@@ -974,6 +997,34 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 			}
 		}
 	}
+	.contact-info{
+		padding-bottom: 200px;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		position: relative;
+		overflow: hidden;
+		.item{
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			font-size: 50px;
+			color: #000;
+			line-height: 1;
+			@media (max-width: 1240px){ font-size: 40px; }
+			@media (max-width: 768px){ flex-direction: column; font-size: 30px; }
+			@media (max-width: 640px){ font-size: 22px; }
+			@media (max-width: 480px){ font-size: 18px; }
+			.icon{
+				svg{ display: block; width: 60px; height: 60px;}
+			}
+			.name{
+				@media (max-width: 768px){ text-align: center; }
+			}
+		}
+	}
 }//page-section-1
 .page-section-2{
 	padding-bottom: 100px;
@@ -990,20 +1041,30 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 		border-bottom: none;
 		justify-content: center;
 		gap: 20px;
+		@media (max-width: 768px){ gap: 10px; }
 		.nav-item{
+			max-width: calc(25% - 20px);
+			@media (max-width: 768px){ max-width: calc(25% - 10px); }
 			.nav-link{
 				border: none;
 				transition: .4s;
 				margin-bottom: 40px;
 				width: 300px;
+				max-width: 100%;
 				height: 560px;
 				border-radius: 200px 200px 0 0;
 				filter: grayscale(1);
 				&.active{
 					margin-top: 40px;
 					padding-bottom: 0;
-						filter: grayscale(0);
+					filter: grayscale(0);
+					@media (max-width: 992px){ margin-top: 30px; }
+					@media (max-width: 768px){ margin-top: 20px; }
 				}
+				@media (max-width: 1320px){ height: 500px; }
+				@media (max-width: 992px){ height: 400px; }
+				@media (max-width: 768px){ height: 300px; }
+				@media (max-width: 480px){ height: 200px; }
 			}
 		}
 	}
@@ -1023,12 +1084,19 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	margin-bottom: 80px;
 	position: relative;
 	z-index: 10;
+	@media (max-width: 768px){ margin-top: -260px; }
+	@media (max-width: 480px){ margin-top: -160px; }
 	.img{
 		position: relative;
 		img{
 			display: block;
 			max-width: 100%;
 			height: auto;
+		}
+		iframe{
+			display: block;
+			width: 100%;
+			height: 600px;
 		}
 		.img-text{
 			position: absolute;
@@ -1092,6 +1160,15 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 						opacity: 1;
 					}
 				}
+				@media (max-width: 768px){
+					width: 100px;
+					height: 90px;
+					span{
+						width: 100px;
+						height: 90px;
+						font-size: 32px;
+					}
+				}
 			}
 			.top-img{
 				position: absolute;
@@ -1123,12 +1200,19 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 					line-height: 1;
 					font-weight: 300;
 					margin-bottom: 30px;
+					@media (max-width:1320px){ font-size: 44px; }
+					@media (max-width:992px){ font-size: 38px; }
+					@media (max-width:768px){ font-size: 30px; }
+					@media (max-width:480px){ font-size: 22px; }
 				}
 				p{
 					font-size: 25px;
 					color: #666;
 					line-height: 1.25;
 					margin-bottom: 30px;
+					@media (max-width:992px){ font-size: 23px; }
+					@media (max-width:768px){ font-size: 21px; }
+					@media (max-width:480px){ font-size: 18px; }
 				}
 			}
 			.tab-img{
@@ -1323,7 +1407,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 		gap: 10px;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 330px;
+		margin-bottom: 100px;
 		a{
 			display: block;
 			padding: 10px;

@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector('.header');
     const menuOverlay = document.querySelector('.menu-overlay');
     const body = document.querySelector('body');
+    const voice = document.querySelector('.voice-on-off');
 
     // Hamburger menüsüne tıklama
     hamburger.addEventListener('click', function() {
@@ -23,4 +24,49 @@ document.addEventListener("DOMContentLoaded", function () {
             hamburger.classList.remove('open'); // open sınıfını kaldır
         });
     }
+
+    const audio = document.getElementById('bg-music');
+    const btn   = document.querySelector('.voice-on-off');
+
+    function syncUI() {
+    if (!audio.paused) {
+        btn.classList.add('active'); // stop ikonu görünür
+    } else {
+        btn.classList.remove('active'); // play ikonu görünür
+    }
+    }
+
+    async function safePlay() {
+    try {
+        await audio.play();
+    } catch (e) {
+        console.debug('Autoplay engellendi, kullanıcı etkileşimi bekleniyor.');
+    }
+    syncUI();
+    }
+
+    window.toggleMusic = () => {
+    if (audio.paused) {
+        safePlay();
+    } else {
+        audio.pause();
+        syncUI();
+    }
+    };
+
+    // Sayfa yüklenince dene
+    document.addEventListener('DOMContentLoaded', safePlay);
+
+    // Eğer tarayıcı engellerse → ilk kullanıcı etkileşiminde başlat
+    const unlock = () => {
+    if (audio.paused) safePlay();
+    document.removeEventListener('pointerdown', unlock);
+    document.removeEventListener('keydown', unlock);
+    };
+    document.addEventListener('pointerdown', unlock);
+    document.addEventListener('keydown', unlock);
+
+    // Çalma durumunu dinle
+    audio.addEventListener('play', syncUI);
+    audio.addEventListener('pause', syncUI);
 });
