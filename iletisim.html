@@ -148,6 +148,31 @@
             </div>
         </div>
     </div><!-- page-section-1 -->
+    <div class="map-settings">
+        <div class="container">
+            <div class="row">
+                <div class="col col-12 col-lg-8">
+                    <div class="img">
+                        <img src="assets/images/konum-img.png" alt="" />
+                        <div class="pin pin-1 active"></div>
+                        <div class="pin pin-2"></div>
+                        <div class="pin pin-3"></div>
+                        <div class="pin pin-4"></div>
+                        <div class="pin pin-5"></div>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-4">
+                    <div class="list">
+                        <div class="item item-1 active">Lorem ipsum</div>
+                        <div class="item item-2">Lorem ipsum</div>
+                        <div class="item item-3">Lorem ipsum</div>
+                        <div class="item item-4">Lorem ipsum</div>
+                        <div class="item item-5">Lorem ipsum</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- map-settings -->
     <footer class="footer">
         <div class="container">
             <div class="logo" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
@@ -183,5 +208,31 @@
     <script src="assets/plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="assets/plugins/aos/aos.js"></script>
     <script src="assets/js/global.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll(".list .item");
+            const pins = document.querySelectorAll(".img .pin");
+
+            items.forEach((item, index) => {
+                item.addEventListener("click", function () {
+                const targetPin = document.querySelector(`.pin-${index + 1}`);
+                const targetItem = document.querySelector(`.item-${index + 1}`);
+
+                // eğer zaten aktifse hiçbir şey yapma
+                if (targetPin.classList.contains("active") && targetItem.classList.contains("active")) return;
+
+                // tüm pin ve itemlerden active kaldır
+                pins.forEach((p) => p.classList.remove("active"));
+                items.forEach((i) => i.classList.remove("active"));
+
+                // sadece ilgili pin ve iteme active ekle
+                targetPin.classList.add("active");
+                targetItem.classList.add("active");
+                });
+            });
+        });
+    </script>
+
+
 </body>
 </html>

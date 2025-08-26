@@ -149,6 +149,7 @@
     <div class="main-slider">
         <div class="swiper main-swiper">
             <div class="swiper-wrapper">
+                <!--
                 <div class="swiper-slide">
                     <div class="video">
                         <video autoplay="" muted="" loop="" id="video">
@@ -161,6 +162,18 @@
                                 <p>Modern Bir Masal</p>
                             </div>
                         </div>                      
+                    </div>
+                </div>
+                -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <img src="assets/images/palace-ist.png" alt="" />
+                        <div class="text-article">
+                            <div class="text">
+                                <h1 class="forum-regular">Tarihin içinde</h1>
+                                <p>Modern Bir Masal</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -428,6 +441,7 @@
                 nextEl: ".main-slider .swiper-button-next",
                 prevEl: ".main-slider .swiper-button-prev",
             },
+            /* eğer 1. slide da video olacaksa bu alanı açın ve video uzunluğu kadar aşağıdan milisaniye cinsinden değeri girin.
             on: {
                 init: function () {
                     // İlk slayt için başlangıçta 15 saniye bekle
@@ -455,6 +469,7 @@
                     this.autoplay.start(); // Autoplay'i yeniden başlat
                 }
             }
+            */
         });
 
          document.addEventListener("DOMContentLoaded", () => {
